@@ -31,7 +31,6 @@ class matriu:
 			print("Error al crear la matriu: ", repr(error))
 		
 	
-	#producte escalar de la matriu 
 	def escalar(self,num):
 		"""
 		Producte escalar d'un nombre per la matriu, es realitza multiplicant la posició [row][col] * l'escalar
@@ -42,7 +41,6 @@ class matriu:
 			l_aux.append(f)
 		self.r = l_aux
 
-	#suma matrius
 	def suma_matriu(self,m):
 		"""
 		Suma de dos matrius, a la propia matriu li afegim la passada per parametre també d'objecte matriu, han de tindre la mateixa dimensió
@@ -65,7 +63,6 @@ class matriu:
 		else:
 			print("No és pot fer la suma de matrius, dimensions diferents")
 	
-	#resta matriu
 	def resta_matriu(self,m):
 		"""
 		Resta de dos matrius, a la propia matriu li afegim la passada per parametre també d'objecte matriu, han de tindre la mateixa dimensió
@@ -120,7 +117,6 @@ class matriu:
 		
 		self.r = l_aux
 	
-	#divisió matriu, considera matriu
 	def divisio_matriu(self,m):
 		"""
 		Divisió de dos matrius, a la propia matriu dividem per la passada com a parametre, per a dividir una matriu, considerem que multipliquem per
@@ -145,7 +141,6 @@ class matriu:
 		if (not error_op):
 			matriu.multiplica_matriu(self,m)
 	
-	#imprimir matriu
 	def imprimir_matriu(self):
 		"""
 		Imprimeix la matriu per pantalla
