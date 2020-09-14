@@ -17,16 +17,33 @@ class matriu:
 		Constructor de classe, complint que es bidimensional i de tipus int o float, en cas contrari llança excepció
 		"""
 		try:
+			#Tipus de dades
+			len_control = list()
 			for l in r:
+				len_control.append(len(l))
 				if (not isinstance(l,list)):
 					raise TypeError("Elements de grau 1 [1] han de ser llistes")
 				else:
 					for el in l:
 						if (not isinstance(el, float) and not isinstance(el,int)):
 							raise ValueError("Tots els elements de la matriu han de ser reals")
+							
+			#control de longitut
+			aux_len = len_control[0]
+			s_len = True
+			for i in range(1,len(len_control)):
+				if (aux_len != len_control[i]):
+					s_len = False
+				aux_len = len_control[i]
+			
+			if (not s_len):
+				raise Exception ("Totes les files han de tindre les mateixes columnes")
+				
+			
 			self.r = r
 			self.cols = len(self.r[0])
 			self.rows = len(self.r)	
+			
 		except Exception as error:
 			print("Error al crear la matriu: ", repr(error))
 		
